@@ -33,9 +33,13 @@ addLayer("p", {
             },
             12: {
             title: "labubu",
-            description: "get views like a good boy",
+            description: "labubu is yum",
             cost: new Decimal(5),
             },
-
+            13: {
+            title: "labubu phonk",
+            description: "labubu phonk",
+            cost: new Decimal(15),
+            },
         },
 })
