@@ -26,12 +26,16 @@ addLayer("p", {
     ],
     layerShown(){return true},
         upgrades: {
-        11: {
+            11: {
             title: "The first step up!",
             description: "Double your points!",
             cost: new Decimal(2),
+            },
+            12: {
+            title: "labubu",
+            description: "get views like a good boy",
+            cost: new Decimal(5),
+            },
 
         },
-
-    },
 })
