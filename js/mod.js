@@ -1,11 +1,12 @@
 let modInfo = {
-	name: "The ??? Tree",
-	author: "nobody",
-	pointsName: "points",
+	name: "The sigma Tree",
+	author: "hhrjfjjxg",
+	pointsName: "rizz",
 	modFiles: ["layers.js", "tree.js"],
 
-	discordName: "",
+	discordName: "i dont have discord",
 	discordLink: "",
+	discordLink: "https://github.com/hhrjfjjxg/The-Modding-Tree/blob/master/docs/tutorials/getting-started.md",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
