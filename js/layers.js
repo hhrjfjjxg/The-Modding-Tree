@@ -50,6 +50,16 @@ addLayer("p", {
             description: "multiply your rizz gain by 2.5",
             cost: new Decimal(50),
             },
+            15: {
+            title: "malware",
+            description: "inject malware for 1.5x multiplier for every prestige",
+            cost: new Decimal(150),
+            effect() {
+        return player[this.layer].points.add(1).pow(0.5)
+        },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            },
+            
             
         },
 })
