@@ -28,7 +28,7 @@ addLayer("p", {
         upgrades: {
             11: {
             title: "The first step up!",
-            description: "Double your points!",
+            description: "1.3x rizz gain",
             cost: new Decimal(2),
             },
             12: {
@@ -46,8 +46,8 @@ addLayer("p", {
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
             14: {
-            title: "",
-            description: "multiply your points gain by 2",
+            title: "streams",
+            description: "multiply your rizz gain by 2.5",
             cost: new Decimal(50),
             },
             
