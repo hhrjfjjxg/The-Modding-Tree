@@ -59,7 +59,7 @@ addLayer("p", {
         },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
-            16: {
+            26: {
             title: "skibidi slicers",
             description: "we are getting there! 3x multiplier",
             cost: new Decimal(1000),
