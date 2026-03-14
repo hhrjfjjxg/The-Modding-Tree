@@ -1,6 +1,7 @@
-addLayer("p", {
-    name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "P", // This appears on the layer's node. Default is the id with the first letter capitalized
+addLayer("p",{
+    name: "gronk phonk", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "gp", // This appears on the layer's node. Default is the id with the first letter capitalized
+    branches: [ ["g", "#ffffff"] ],
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
@@ -48,12 +49,12 @@ addLayer("p", {
             14: {
             title: "streams",
             description: "multiply your rizz gain by 1.5",
-            cost: new Decimal(50),
+            cost: new Decimal(15),
             },
             15: {
             title: "malware",
             description: "inject malware! for every gronk phonk you get a 1.2 multiplier to rizz gain",
-            cost: new Decimal(150),
+            cost: new Decimal(25),
             effect() {
         return player[this.layer].points.add(1).pow(0.2)
         },
@@ -62,12 +63,12 @@ addLayer("p", {
             26: {
             title: "skibidi slicers",
             description: "we are getting there! 1.5x multiplier",
-            cost: new Decimal(1000),
+            cost: new Decimal(50),
             },
             27: {
             title: "skibidi toliet",
             description: "skibidi toliet edits every gronk phonk is 1.32 multiplier to rizz gain",
-            cost: new Decimal(1500),
+            cost: new Decimal(100),
             effect() {
         return player[this.layer].points.add(1).pow(0.32)
         },
@@ -76,8 +77,39 @@ addLayer("p", {
             28: {
             title: "skibidi toilet videos",
             description: "we are not getting through life with this one 1.67 multiplier to rizz gain",
-            cost: new Decimal(2500),
+            cost: new Decimal(300),
             },
             
         },
+})
+addLayer("g", {
+    name: "mewing grind", 
+    symbol: "mg", 
+    position: 0, 
+    row: 1, 
+    startData() { return {
+        unlocked: false, 
+        points: new Decimal(0),
+    }},
+    color: "#ff0000",
+    requires: new Decimal(100), 
+    resource: "giga points", 
+    baseResource: "gronk phonk", 
+    baseAmount() {return player.p.points}, 
+    type: "normal", 
+    exponent: 0.5,
+    gainMult() { return new Decimal(1) },
+    gainExp() { return new Decimal(1) },
+    row: 1, 
+    layerShown() { return true },
+    hotkeys: [
+        {key: "g", description: "G: Reset for mewing points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    upgrades: {
+        11: {
+            title: "mewing boost",
+            description: "Double your rizz gain.",
+            cost: new Decimal(500),
+        },
+    },
 })
