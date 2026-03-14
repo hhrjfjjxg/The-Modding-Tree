@@ -47,7 +47,7 @@ addLayer("p", {
             },
             14: {
             title: "streams",
-            description: "multiply your rizz gain by 2.5",
+            description: "multiply your rizz gain by 1.5",
             cost: new Decimal(50),
             },
             15: {
@@ -55,7 +55,7 @@ addLayer("p", {
             description: "inject malware! for every prestige you get a 0.3 multiplier to rizz gain",
             cost: new Decimal(150),
             effect() {
-        return player[this.layer].points.add(1).pow(4)
+        return player[this.layer].points.add(1).pow(0.4)
         },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
@@ -67,11 +67,16 @@ addLayer("p", {
             27: {
             title: "skibidi toliet",
             description: "67 mangos and mustard 1.67 multiplier for every prestige",
-            cost: new Decimal(1000),
+            cost: new Decimal(1500),
             effect() {
         return player[this.layer].points.add(1).pow(0.67)
         },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            },
+            28: {
+            title: "93",
+            description: "we are not getting throught life with this one",
+            cost: new Decimal(2500),
             },
             
         },
