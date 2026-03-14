@@ -1,5 +1,5 @@
 addLayer("p", {
-    name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id.
+    name: "gronk phonk", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "P", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
@@ -33,15 +33,15 @@ addLayer("p", {
             },
             12: {
             title: "labubu",
-            description: "labubu is yum",
+            description: "labubu is yum 1.4x rizz gain",
             cost: new Decimal(5),
             },
             13: {
             title: "labubu phonk",
-            description: "get views like a good boy",
+            description: "get views like a good boy 1.1 multiplier for every gronk phonk",
             cost: new Decimal(15),
             effect() {
-        return player[this.layer].points.add(1).pow(0.3)
+        return player[this.layer].points.add(1).pow(0.1)
         },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
@@ -52,30 +52,30 @@ addLayer("p", {
             },
             15: {
             title: "malware",
-            description: "inject malware! for every prestige you get a 0.3 multiplier to rizz gain",
+            description: "inject malware! for every gronk phonk you get a 1.2 multiplier to rizz gain",
             cost: new Decimal(150),
             effect() {
-        return player[this.layer].points.add(1).pow(0.4)
+        return player[this.layer].points.add(1).pow(0.2)
         },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
             26: {
             title: "skibidi slicers",
-            description: "we are getting there! 3x multiplier",
+            description: "we are getting there! 1.5x multiplier",
             cost: new Decimal(1000),
             },
             27: {
             title: "skibidi toliet",
-            description: "67 mangos and mustard 1.67 multiplier for every prestige",
+            description: "skibidi toliet edits every gronk phonk is 1.32 multiplier to rizz gain",
             cost: new Decimal(1500),
             effect() {
-        return player[this.layer].points.add(1).pow(0.67)
+        return player[this.layer].points.add(1).pow(0.32)
         },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
             28: {
-            title: "93",
-            description: "we are not getting throught life with this one",
+            title: "skibidi toilet videos",
+            description: "we are not getting through life with this one 1.67 multiplier to rizz gain",
             cost: new Decimal(2500),
             },
             
