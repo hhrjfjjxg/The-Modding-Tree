@@ -9,7 +9,7 @@ addLayer("p", {
     color: "#4BDC13",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "gronk phonk", // Name of prestige currency
-    baseResource: "phonk level", // Name of resource prestige is based on
+    baseResource: "rizz", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
@@ -39,7 +39,7 @@ addLayer("p", {
             13: {
             title: "labubu phonk",
             description: "get views like a good boy 1.1 multiplier for every gronk phonk",
-            cost: new Decimal(15),
+            cost: new Decimal(10),
             effect() {
         return player[this.layer].points.add(1).pow(0.1)
         },
