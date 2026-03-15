@@ -26,6 +26,14 @@ addLayer("p",{
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    milestones: {
+        0: {
+            requirementDescription: "100 Gronk Phonk",
+            effectDescription: "Keep Gronk Phonk upgrades on reset.",
+            done() { return player.p.points.gte(100) },
+            keep: ["upgrades"] // This ensures Layer G resets don't wipe your P upgrades
+        }
+    },
         upgrades: {
             11: {
             title: "The first step up!",
@@ -93,7 +101,7 @@ addLayer("g", {
     }},
     color: "#ff0000",
     requires: new Decimal(100), 
-    resource: "giga points", 
+    resource: "mewing points", 
     baseResource: "gronk phonk", 
     baseAmount() {return player.p.points}, 
     type: "normal", 
