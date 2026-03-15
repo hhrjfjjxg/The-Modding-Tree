@@ -6,6 +6,7 @@ addLayer("p",{
     startData() { return {
         unlocked: true,
 		points: new Decimal(0),
+        best: new Decimal(0),
     }},
     color: "#4BDC13",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
@@ -26,13 +27,9 @@ addLayer("p",{
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    milestones: {
-        0: {
-            requirementDescription: "100 Gronk Phonk",
-            effectDescription: "Keep Gronk Phonk upgrades on reset.",
-            done() { return player.p.points.gte(100) },
-            keep: ["upgrades"] // This ensures Layer G resets don't wipe your P upgrades
-        }
+    doReset(resettingLayer) {
+        let keep = [];
+        if (layers[resettingLayer].row > this.row) layerDataReset("p", keep);
     },
         upgrades: {
             11: {
@@ -96,14 +93,15 @@ addLayer("g", {
     position: 0, 
     row: 1, 
     startData() { return {
-        unlocked: false, 
+        unlocked: true, 
         points: new Decimal(0),
     }},
     color: "#ff0000",
     requires: new Decimal(100), 
     resource: "mewing points", 
     baseResource: "gronk phonk", 
-    baseAmount() {return player.p.points}, 
+    baseAmount() {return player.p.points},
+    baseAmount() { return player.p.best }, 
     type: "normal", 
     exponent: 0.5,
     gainMult() { return new Decimal(1) },
