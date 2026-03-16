@@ -16,7 +16,7 @@ addLayer("p",{
     type: "normal", 
     exponent: 0.5, 
     gainMult() { 
-        mult = new Decimal(1)
+        let mult = new Decimal(1)
         return mult
     },
     gainExp() { 
@@ -26,11 +26,14 @@ addLayer("p",{
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true},
+        layerShown() { return true },
     doReset(resettingLayer) {
         let keep = [];
-        keep.push("best") 
-        if (layers[resettingLayer].row > this.row) layerDataReset("p", keep);
+        if (resettingLayer == "g") {
+            keep.push("upgrades");
+            keep.push("best");
+        }
+        if (layers[resettingLayer].row > this.row) layerDataReset(this.layer, keep);
     },
         upgrades: {
             11: {
